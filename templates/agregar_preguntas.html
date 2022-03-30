@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% from 'macros.html' import navbar %}
+{% block main %}
+{{ navbar('/') }}
+<div class="container border mt-4 p-4 bg-light">
+    <h2 class="pb-5 text-primary">Agregar Preguntas</h2>
+
+    <form action="/agregar_preguntas" method="post">
+    <div >
+        <label class="form-label fw-bold" for="floatingTextarea">Preguntas:</label>
+        <textarea class="form-control" rows="3"  name="pregunta" ></textarea>
+        
+        <div class="col">
+            <label class="form-label fw-bold">Respuesta Correcta</label>
+            <input class="form-control" type="text" name="correcta"  required>
+        </div>
+        <div class="col">
+            <label class="form-label fw-bold">Respuesta Incorrecta 1</label>
+            <input class="form-control" type="text" name="incorrecta1"  required>
+        </div>
+        <div class="col">
+            <label class="form-label fw-bold">Respuesta Incorrecta 2</label>
+            <input class="form-control" type="text" name="incorrecta2"  required>
+        </div>
+    </form>
+    <div>
+        <br>
+    <div class="align-content-md-end">
+        <button class="btn btn-primary" type="submit" > Cancelar   </button>
+        <button class="btn btn-primary" type="submit" > Agregar Pregunta </button>
+    </div>
+        {%endblock %}pb-5
